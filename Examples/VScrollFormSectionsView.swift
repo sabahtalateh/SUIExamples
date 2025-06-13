@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct VScrollFormSections: View {
+struct VScrollFormSectionsView: View {
     
     @State private var currentPage = 0
     
@@ -45,6 +45,6 @@ struct Section1: View {
 }
 
 #Preview {
-    VScrollFormSections()
+    VScrollFormSectionsView()
     //        .modelContainer(for: Item.self, inMemory: true)
 }

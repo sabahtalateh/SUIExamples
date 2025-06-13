@@ -3,6 +3,8 @@ import SwiftData
 
 enum Destination {
     case VScrollFormSections
+    case Shaders
+    case GradientSubtractShaders
 }
 
 struct ContentView: View {
@@ -17,11 +19,21 @@ struct ContentView: View {
                     "Vertical Scroll of Form Sections (Not Working)",
                     value: Destination.VScrollFormSections
                 )
+                NavigationLink(
+                    "Shaders",
+                    value: Destination.Shaders
+                )
+                NavigationLink(
+                    "Gradient Subtract Shaders",
+                    value: Destination.GradientSubtractShaders
+                )
             }
             .navigationTitle("SwiftUI Examples")
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
-                case .VScrollFormSections: VScrollFormSections()
+                case .VScrollFormSections: VScrollFormSectionsView()
+                case .Shaders: ShadersView()
+                case .GradientSubtractShaders: GradientSubtractView()
                 }
             }
             .onAppear {
