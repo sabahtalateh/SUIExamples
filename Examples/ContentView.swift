@@ -5,6 +5,8 @@ enum Destination {
     case VScrollFormSections
     case Shaders
     case GradientSubtractShaders
+    case CubeMetal
+    case SphereMetal
 }
 
 struct ContentView: View {
@@ -27,6 +29,10 @@ struct ContentView: View {
                     "Gradient Subtract Shaders",
                     value: Destination.GradientSubtractShaders
                 )
+                NavigationLink(
+                    "Cube. Metal",
+                    value: Destination.CubeMetal
+                )
             }
             .navigationTitle("SwiftUI Examples")
             .navigationDestination(for: Destination.self) { destination in
@@ -34,11 +40,13 @@ struct ContentView: View {
                 case .VScrollFormSections: VScrollFormSectionsView()
                 case .Shaders: ShadersView()
                 case .GradientSubtractShaders: GradientSubtractView()
+                case .CubeMetal: MetalKitCubeView()
+                case .SphereMetal: MetalKitSphereView()
                 }
             }
             .onAppear {
                 // Auto open some example
-                // navigationPath.append(Destination.VScrollFormSections)
+//                navigationPath.append(Destination.SphereMetal)
             }
         }
     }
@@ -46,5 +54,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        //.modelContainer(for: Item.self, inMemory: true)
+    //.modelContainer(for: Item.self, inMemory: true)
 }
