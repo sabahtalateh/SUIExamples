@@ -33,6 +33,10 @@ struct ContentView: View {
                     "Cube. Metal",
                     value: Destination.CubeMetal
                 )
+                NavigationLink(
+                    "Sphere. Metal",
+                    value: Destination.SphereMetal
+                )
             }
             .navigationTitle("SwiftUI Examples")
             .navigationDestination(for: Destination.self) { destination in
