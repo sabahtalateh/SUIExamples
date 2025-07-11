@@ -7,6 +7,7 @@ enum Destination {
     case GradientSubtractShaders
     case CubeMetal
     case SphereMetal
+    case Blending
 }
 
 struct ContentView: View {
@@ -42,10 +43,14 @@ struct ContentView: View {
             .navigationDestination(for: Destination.self) { destination in
                 switch destination {
                 case .VScrollFormSections: VScrollFormSectionsView()
-                case .Shaders: ShadersView()
+                case .Shaders:
+                    ShadersView()
                 case .GradientSubtractShaders: GradientSubtractView()
-                case .CubeMetal: MetalKitCubeView()
+                case .CubeMetal:
+                    MetalKitCubeView()
                 case .SphereMetal: MetalKitSphereView()
+                case .Blending:
+                    BlendingView()
                 }
             }
             .onAppear {
