@@ -8,6 +8,7 @@ enum Destination {
     case CubeMetal
     case SphereMetal
     case Blending
+    case CircleMetal
 }
 
 struct ContentView: View {
@@ -51,11 +52,14 @@ struct ContentView: View {
                 case .SphereMetal: MetalKitSphereView()
                 case .Blending:
                     BlendingView()
+                case .CircleMetal:
+                    CircleMetalView()
+                        .preferredColorScheme(.dark)
                 }
             }
             .onAppear {
                 // Auto open some example
-//                navigationPath.append(Destination.SphereMetal)
+                navigationPath.append(Destination.CircleMetal)
             }
         }
     }
