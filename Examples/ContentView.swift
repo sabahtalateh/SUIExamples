@@ -39,6 +39,14 @@ struct ContentView: View {
                     "Sphere. Metal",
                     value: Destination.SphereMetal
                 )
+                NavigationLink(
+                    "Blending",
+                    value: Destination.Blending
+                )
+                NavigationLink(
+                    "Circle. Metal",
+                    value: Destination.CircleMetal
+                )
             }
             .navigationTitle("SwiftUI Examples")
             .navigationDestination(for: Destination.self) { destination in
@@ -59,7 +67,7 @@ struct ContentView: View {
             }
             .onAppear {
                 // Auto open some example
-                navigationPath.append(Destination.CircleMetal)
+                //navigationPath.append(Destination.CircleMetal)
             }
         }
     }
